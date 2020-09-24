@@ -39,7 +39,7 @@
     <p class="mb-3">Middle bar is the section where your logo and short description will be shown</p>
 
     <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" value="" id="show_mbar" checked>
+        <input class="form-check-input" type="checkbox" value="" name="show_mbar" id="show_mbar" checked>
         <label class="form-check-label" for="show_mbar">
           {{ __('Show middle bar') }}
         </label>
@@ -64,7 +64,7 @@
     <p class="mb-3">"Back to top" allows users to smoothly scroll back to the top of the page. It's a little detail which enhances navigation experience on website with long pages. If users keeps on scrolling, the button nicely reduces its opacity to be less distracting during navigation.</p>
 
     <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" value="" id="show_back_to_top_btn" checked>
+        <input class="form-check-input" type="checkbox" value="" name="show_back_to_top_btn" id="show_back_to_top_btn" checked>
         <label class="form-check-label" for="show_back_to_top_btn">
           {{ __('Show back to top button') }}
         </label>
@@ -87,7 +87,7 @@
     <p class="mb-3">Scrollbar is a long thin section at the edge of a computer display by which material can be scrolled using a mouse.</p>
 
     <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" value="" id="scrollbar_default">
+        <input class="form-check-input" type="checkbox" value="" name="scrollbar_default" id="scrollbar_default">
         <label class="form-check-label" for="scrollbar_default">
           {{ __('Use default scrollbar') }}
         </label>

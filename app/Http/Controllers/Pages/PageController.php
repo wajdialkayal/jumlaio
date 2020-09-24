@@ -53,7 +53,7 @@ class PageController extends Controller
     {
         //dd($request);
         $page = new Page();
-    
+        //dd($request);
         $page_name = $request->page_name;
         $page->name = $page_name;
         $page->about = $request->about;
@@ -119,9 +119,10 @@ class PageController extends Controller
         $page->show_total_views = $request->show_total_views ? true : false;
         $page->show_navbar_social_links = $request->show_navbar_social_links ? true : false;
         $page->show_footer_social_links = $request->show_footer_social_links ? true : false;
+
         $page->scrollbar_default = $request->scrollbar_default ? true : false;
         $page->show_mbar = $request->show_mbar ? true : false;
-        $page->show_back_to_top_btn = $request->show_mbar ? true : false;
+        $page->show_back_to_top_btn = $request->show_back_to_top_btn ? true : false;
 
 
         
