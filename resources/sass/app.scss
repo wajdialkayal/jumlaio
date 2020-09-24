@@ -1,0 +1,200 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css';
+@import '~select2/dist/css/select2.min.css';
+@import '~select2-bootstrap-theme/dist/select2-bootstrap.min.css';
+@import '~sweetalert2/dist/sweetalert2.min.css';
+
+html {
+    scroll-behavior: smooth;
+}
+
+.card,
+.btn,
+.form-control,
+.dropdown-menu,
+.alert,
+.modal-content, .swal2-styled, .swal2-confirm, .swal2-styled, .swal2-cancel {
+    border-radius: 10px;
+}
+.swal2-modal { border-radius: 25px;}
+.profile-photo-input {
+    display: none;
+}
+
+.swal2-styled.swal2-confirm {
+    border-radius: 10px;
+    background-color: $dark;
+    font-size: 0.9em;
+    box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;
+  }
+  .swal2-styled.swal2-cancel {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    background-color: #F8F9Fa;
+    color: #212529;
+    font-size: 0.9em;
+    box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;
+  }
+.profile-photo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.logo-photo-input {
+    display: none;
+}
+
+.logo-photo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.favicon-photo-input {
+    display: none;
+}
+
+.favicon-photo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+.navbar-profile-photo {
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+}
+
+.navbar-nav>li>a.navbar-profile-photo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.j-link {
+    color: #0D6EFD !important;
+    text-decoration: none;
+    transition: .3s
+}
+
+.j-link:hover {
+    color: $red !important;
+    text-decoration: none
+}
+
+.btn-back-to-top {
+    display: none;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #111111;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 25px;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .3s
+}
+
+.symbol-btn-back-to-top {
+    font-size: 22px;
+    color: #fff;
+    line-height: 1em
+}
+
+.btn-back-to-top:hover {
+    opacity: 1;
+    cursor: pointer;
+    background-color: $red;
+}
+
+
+.j-link {
+    color: #0D6EFD !important;
+    text-decoration: none;
+    transition: .3s
+}
+
+.j-link:hover {
+    color: $red !important;
+    text-decoration: none
+}
+
+.divider-text {
+    position: relative;
+    text-align: center
+}
+
+.divider-text:before {
+    content: "";
+    display: block;
+    border-top: solid 0.5px #111111;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+}
+
+.divider-text span {
+    background: #fff;
+    padding: 0 10px;
+    position: relative;
+    z-index: 1;
+}
+
+
+.btn-facebook {
+    color: #fff;
+    background-color: #1877F2;
+    border-color: #166FE5;
+}
+
+.btn-facebook:hover {
+    color: #fff;
+    background-color: #166FE5;
+    border-color: #166FE5;
+}
+
+btn-check:focus+.btn-facebook,
+.btn-facebook:focus {
+    color: #fff;
+    background-color: #0067F4;
+    border-color: #1877F2;
+    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
+}
+
+
+.btn-twitter {
+    color: #fff;
+    background-color: #1DA1F2;
+    border-color: #1A91DA;
+}
+
+.btn-twitter:hover {
+    color: #fff;
+    background-color: #1A91DA;
+    border-color: #1DA1F2;
+}
+
+btn-check:focus+.btn-twitter,
+.btn-twitter:focus {
+    color: #fff;
+    background-color: #0067F4;
+    border-color: #1877F2;
+    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
+}
+
+.object-fit-cover{object-fit: cover}
+.text-orange{color: #FF6300 !important;}
+.text-maroon-flush{color: #C32361 !important;}
