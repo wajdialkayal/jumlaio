@@ -24,7 +24,29 @@
             background-color: #111111;
         }
 
+        .browser-preview::-webkit-scrollbar {
+            width: 10px;
+        }
 
+        .browser-preview::-webkit-scrollbar-track {
+            -webkit-box-shadow: #ffffff; 
+           
+        }
+
+        .browser-preview::-webkit-scrollbar-thumb {
+            -webkit-box-shadow: #111111; 
+        }
+
+        .btn-back-to-top-preview{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #111111;
+            color: #ffffff;
+        }
+        .btn-back-to-top-preview:hover{
+            color: #ffffff;
+        }
     </style>
 @endpush
 
@@ -52,7 +74,7 @@
         </a>
     </li>
 </ul>
-<div class="mt-3 border-bottom">
+<div class="mt-1 border-bottom">
 
     <div class="input-group mr-sm-2">
         <div class="input-group-prepend">
@@ -144,6 +166,8 @@
                         <button type="button" class="btn btn-preview">Button</button>
                     </div>
                 </div>
+
+               <button class="btn float-right btn-back-to-top-preview" id="btn-back-to-top-preview"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
 
             </div>
 

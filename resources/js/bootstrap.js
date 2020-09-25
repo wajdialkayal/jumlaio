@@ -11,7 +11,7 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-    require('@fortawesome/fontawesome-free/js/all');
+    //require('@fortawesome/fontawesome-free/js/all');
     require('bootstrap-datepicker/dist/js/bootstrap-datepicker');
     require('bootstrap-datepicker/dist/locales/bootstrap-datepicker.ar.min');
     window.make_toast = require('./toast');

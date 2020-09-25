@@ -10,6 +10,7 @@
 @import '~select2/dist/css/select2.min.css';
 @import '~select2-bootstrap-theme/dist/select2-bootstrap.min.css';
 @import '~sweetalert2/dist/sweetalert2.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
 
 html {
     scroll-behavior: smooth;
@@ -198,4 +199,29 @@ btn-check:focus+.btn-twitter,
 .object-fit-cover{object-fit: cover}
 .text-orange{color: #FF6300 !important;}
 .text-maroon-flush{color: #C32361 !important;}
+.panel-title{
+    cursor: pointer;
+}
+.panel-title:hover{
+    background-color: #ECECEC;
+    border-radius: 10px;
+}
+.prevent-selection{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
+}
+.panel-title::after {
+    content: '\f107';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    color: #111111;
+    float: right;
+}
 
+.panel-title[aria-expanded="true"]::after {
+	content: '\f106';
+}

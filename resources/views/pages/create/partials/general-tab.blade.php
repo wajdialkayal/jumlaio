@@ -28,14 +28,33 @@
     </div>
 
     
-    <div class="form-group">
-        <label for="page_name" class="font-weight-bold">
-            {{ __('Page Name') }}* 
-            <a href="#" class="text-info" data-toggle="tooltip" data-placement="top" title="{{ __('Name of your brand, company, business or orgenization') }}">
-                <i class="fas fa-question-circle"></i>
-            </a> 
-        </label>
-        <input type="text" name="page_name" id="page_name" class="form-control shadow-sm" value="{{ old('page_name') }}" maxlength="255" required>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="page_name" class="font-weight-bold">
+                    {{ __('Page Name') }}* 
+                    <a href="#" class="text-info" data-toggle="tooltip" data-placement="top" title="{{ __('Name of your brand, company, business or orgenization') }}">
+                        <i class="fas fa-question-circle"></i>
+                    </a> 
+                </label>
+                <input type="text" name="page_name" id="page_name" class="form-control shadow-sm" value="{{ old('page_name') }}" maxlength="255" required>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="" class="font-weight-bold"> 
+                    <i class="fas fa-tag"></i> {{ __('Category') }}* 
+                    <a href="#" class="text-info" data-toggle="tooltip" data-placement="top" title="{{ __('Category that describes what type is your page') }}">
+                        <i class="fas fa-question-circle"></i>
+                    </a>
+                </label>
+                <select class="form-contol shadow-sm" name="categories[]" id="category-select" multiple="multiple" required>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ __($category->display_name) }}</option>                    
+                    @endforeach
+                </select>
+            </div>
+        </div>
     </div>
 
     <div class="form-group">
@@ -57,22 +76,6 @@
         </label>
        <textarea name="short_des" id="short_des" class="form-control shadow-sm" maxlength="255">{{ old('short_des') }}</textarea>
     </div>
-
-
-    <div class="form-group">
-        <label for="" class="font-weight-bold"> 
-            <i class="fas fa-tag"></i> {{ __('Category') }}* 
-            <a href="#" class="text-info" data-toggle="tooltip" data-placement="top" title="{{ __('Category that describes what type is your page') }}">
-                <i class="fas fa-question-circle"></i>
-            </a>
-        </label>
-        <select class="form-contol shadow-sm" name="categories[]" id="category-select" multiple="multiple" required>
-            @foreach ($categories as $category)
-                <option value="{{ $category->id }}">{{ __($category->display_name) }}</option>                    
-            @endforeach
-        </select>
-    </div>
-
 
 
     <div class="form-group">
@@ -177,16 +180,16 @@
             $('#favicon-preview').attr("src", "/favicon.ico");//preview-reset
         });
         //preview
-        $("#meta_title").on('keyup', function() {
+        $("#meta_title").on("input", function() {
             $("#meta-title-preview").text($(this).val());
         });
-        $("#page_name").on('keyup', function() {
+        $("#page_name").on("input", function() {
             $("#page-name-preview").text($(this).val());
             $("#footer-page-name-preview").text($(this).val());
             $("#footer-name-preview").text($(this).val());
         });
 
-        $("#short_des").on('keyup', function() {
+        $("#short_des").on("input", function() {
             $("#short-des-preview").text($(this).val());
         });
     </script>
