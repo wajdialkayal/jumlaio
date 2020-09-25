@@ -15,7 +15,7 @@ class FontSeeder extends Seeder
     public function run()
     {
         $fonts = [
-            'Montserrat, sans-serif;',
+            'Montserrat, sans-serif',
             'Roboto, sans-serif',
             'Cairo, sans-serif',
             'Amiri, sans-serif',

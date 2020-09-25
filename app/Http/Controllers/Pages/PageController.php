@@ -7,6 +7,7 @@ use App\Http\Requests\CreatePageRequest;
 use App\Models\Banner;
 use App\Models\Category;
 use App\Models\Page;
+use App\Services\SlugGeneratorService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -53,14 +54,15 @@ class PageController extends Controller
     {
         //dd($request);
         $page = new Page();
+        $generatoService = new SlugGeneratorService();
         //dd($request);
         $page_name = $request->page_name;
         $page->name = $page_name;
         $page->about = $request->about;
         $page->short_description = $request->short_des;
 
-        $page->slug = Str::slug($page_name);
-        $page->subdomain = Str::slug($page_name, '');
+        $page->slug = $generatoService->setSlug($page_name);
+        $page->subdomain = Str::slug($page->slug, '');
 
         $page->facebook_url = $request->facebook_url;
         $page->instagram_url = $request->instagram_url;
@@ -146,8 +148,7 @@ class PageController extends Controller
 
         $page->categories()->attach($request->categories);
 
-
-        return back()->with('success', 'Page created successfully');
+        return redirect()->route('pages.index')->with('success', 'Page Created Successfully');
     }
 
     public function destroy(Page $page)
@@ -156,6 +157,4 @@ class PageController extends Controller
         $page->delete();
         return back()->with('success', 'Page deleted');
     }
-
-
 }

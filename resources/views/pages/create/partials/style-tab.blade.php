@@ -39,7 +39,7 @@
     <p class="mb-3">Middle bar is the section where your logo and short description will be shown</p>
 
     <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" value="" name="show_mbar" id="show_mbar" checked>
+        <input class="form-check-input" type="checkbox" name="show_mbar" id="show_mbar" checked>
         <label class="form-check-label" for="show_mbar">
           {{ __('Show middle bar') }}
         </label>
@@ -64,7 +64,7 @@
     <p class="mb-3">"Back to top" allows users to smoothly scroll back to the top of the page. It's a little detail which enhances navigation experience on website with long pages. If users keeps on scrolling, the button nicely reduces its opacity to be less distracting during navigation.</p>
 
     <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" value="" name="show_back_to_top_btn" id="show_back_to_top_btn" checked>
+        <input class="form-check-input" type="checkbox" name="show_back_to_top_btn" id="show_back_to_top_btn" checked>
         <label class="form-check-label" for="show_back_to_top_btn">
           {{ __('Show back to top button') }}
         </label>
@@ -87,7 +87,7 @@
     <p class="mb-3">Scrollbar is a long thin section at the edge of a computer display by which material can be scrolled using a mouse.</p>
 
     <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" value="" name="scrollbar_default" id="scrollbar_default">
+        <input class="form-check-input" type="checkbox" name="scrollbar_default" id="scrollbar_default">
         <label class="form-check-label" for="scrollbar_default">
           {{ __('Use default scrollbar') }}
         </label>
@@ -126,7 +126,7 @@
     </div>
 
     <div class="form-group">
-        <label for="btn_text_color" class="font-weight-bold">{{ __('Button Style') }}</label>
+        <label for="btn_style" class="font-weight-bold">{{ __('Button Style') }}</label>
         <select name="btn_style" id="btn_style" class="form-control shadow-sm w-25">
             <option value="normal">Normal</option>
             <option value="rounded">Rounded</option>
@@ -190,10 +190,14 @@
     $('#show_mbar').change(function() {
         if(this.checked) {
             $('#mbar-section').show();
+            $('#mbar-preview').show();
         }else{
             $('#mbar-section').hide();
+            $('#mbar-preview').hide();
         }
     });
+
+
     $('#show_back_to_top_btn').change(function() {
         if(this.checked) {
             $('#btt-section').show();
@@ -201,6 +205,8 @@
             $('#btt-section').hide();
         }
     });
+
+
     $('#scrollbar_default').change(function() {
         if(this.checked) {
             $('#scrollbar-section').hide();
@@ -208,5 +214,71 @@
             $('#scrollbar-section').show();
         }
     });
+
+    $('#card_bg_color').change(function() {
+        $('#card-preview').css("background-color", $(this).val());
+    });
+
+    $('#card_text_color').change(function() {
+        $('#card-preview').css("color", $(this).val());
+    });
+
+    $('#card_shadow').change(function() {
+        $("#card-preview").removeClass();
+        $('#card-preview').addClass('card');
+        $('#card-preview').addClass($(this).val());
+    });
+
+    $('#page_font').change(function() {
+        $('#web-page-preview').css("font-family", $(this).val());
+    });
+
+    $('#mbar_text_color').change(function() {
+        $('#mbar-preview').css("color", $(this).val());
+    });
+    $('#mbar_bg_color').change(function() {
+        $('#mbar-preview').css("background-color", $(this).val());
+    });
+
+    $('#topbar_bg_color').change(function() {
+        $('#topbar-preview').css("background-color", $(this).val());
+    });
+
+    $('#topbar_text_color').change(function() {
+        $('#topbar-preview').css("color", $(this).val());
+        $('.nav-link-preview').css("color", $(this).val());
+    });
+
+    $('#body_bg_color').change(function() {
+        $('#body-preview').css("background-color", $(this).val());
+    });
+
+
+    $('#footer_bg_color').change(function() {
+        $('#footer-preview').css("background-color", $(this).val());
+    });
+
+    $('#footer_text_color').change(function() {
+        $('.footer-link-preview').css("color", $(this).val());
+    });
+
+    $('#btn_text_color').change(function() {
+        $('.btn-preview').css("color", $(this).val());
+    });
+    $('#btn_bg_color').change(function() {
+        $('.btn-preview').css("background-color", $(this).val());
+    });
+
+    $('#btn_style').change(function() {
+        if($(this).val() == 'rounded'){
+            $('.btn-preview').css("border-radius", '25px');
+        }else{
+            $('.btn-preview').css("border-radius", '10px');
+        }
+    });
+    $("#footer_text").on('keyup', function() {
+            $("#footer-text-preview").text($(this).val());
+        });
+    
     </script>
 @endpush

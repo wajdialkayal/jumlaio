@@ -139,7 +139,8 @@
 @push('scripts')
     <script>
         $( "#category-select" ).select2({
-            theme: "bootstrap"
+            theme: "bootstrap",
+            width: "style",
             
         });
         function readURL(input, image) {
@@ -154,19 +155,39 @@
         }
         $("#logo-photo-input").change(function() {
             readURL(this, $('#logo-photo'));
+            readURL(this, $('#logo-preview'));
         });
 
         $('#btn-reset-image').on('click', function() {
             $('#logo-photo').attr("src", "{{ config('constants.ui_avatars_url_default') }}");
             $('#logo-photo-input').val('');
+            $('#logo-preview').attr("src", "{{ config('constants.ui_avatars_url_default') }}");
+
         });
         $("#favicon-photo-input").change(function() {
             readURL(this, $('#favicon-photo'));
+            readURL(this, $('#favicon-preview'));//preview
         });
 
         $('#btn-reset-favicon').on('click', function() {
             $('#favicon-photo').attr("src", "{{ config('constants.ui_avatars_url_default') }}");
             $('#favicon-photo-input').val('');
+
+            
+            $('#favicon-preview').attr("src", "/favicon.ico");//preview-reset
+        });
+        //preview
+        $("#meta_title").on('keyup', function() {
+            $("#meta-title-preview").text($(this).val());
+        });
+        $("#page_name").on('keyup', function() {
+            $("#page-name-preview").text($(this).val());
+            $("#footer-page-name-preview").text($(this).val());
+            $("#footer-name-preview").text($(this).val());
+        });
+
+        $("#short_des").on('keyup', function() {
+            $("#short-des-preview").text($(this).val());
         });
     </script>
 @endpush

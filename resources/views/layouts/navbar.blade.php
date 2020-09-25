@@ -11,10 +11,10 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-fire-alt"></i> {{ __('Explore') }}</a>
+                    <a class="nav-link" href="#"><i class="fas fa-search"></i> {{ __('Explore') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-search"></i> {{ __('Trending') }}</a>
+                    <a class="nav-link" href="#"><i class="fas fa-fire-alt"></i> {{ __('Trending') }}</a>
                 </li>
             </ul>
 
