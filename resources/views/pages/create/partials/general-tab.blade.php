@@ -66,7 +66,7 @@
                 <i class="fas fa-question-circle"></i>
             </a>
         </label>
-        <select class="form-contol shadow-sm w-100" name="categories[]" id="category-select" multiple="multiple" required>
+        <select class="form-contol shadow-sm" name="categories[]" id="category-select" multiple="multiple" required>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ __($category->display_name) }}</option>                    
             @endforeach

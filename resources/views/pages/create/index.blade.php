@@ -2,7 +2,7 @@
 @section('title', __('Create New Page'))
 
 @section('content')
-    <div class="container mb-5">
+    <div class="container-fluid mb-5">
 
 
         @if ($message = session('status'))
@@ -22,17 +22,16 @@
             @include('alerts.error')
         @endforeach
 
-   
 
+        <div class="row">
+            <div class="col-md-6 scrollit">
                 <form action="{{ route('pages.store') }}" method="POST" enctype="multipart/form-data" id="page-create-form">
                     @csrf
                     <div class="card shadow-sm">
                        
                        <div class="card-body">
             
-                        <h4 class="card-title">{{ __('Create New Page') }} <!-- Button trigger modal -->
-                            
-                              <button type="submit" id="page-create-btn" class="btn btn-dark shadow-sm px-4 float-right">Create Page</button></h4> 
+                        <h4 class="card-title">{{ __('Create New Page') }} <button type="submit" id="page-create-btn" class="btn btn-dark shadow-sm px-4 float-right">Create Page</button></h4> 
                         <p class="card-text">{{ __('Create your page and connect with your audience') }}</p>
             
             
@@ -95,14 +94,23 @@
                        </div>
                     </div>
                 </form>
+            </div>
+            <div class="col-md-6 fixed">
                 @include('pages.create.partials.preview')
-           
+            </div>
+        </div>
+
+                
+
+{{-- 
                 <button type="button" class="btn btn-primary modal-preview-btn fixed-bottom m-5 px-4" data-toggle="modal" data-target="#previewModal">
                     Preview
-                </button>
+                </button> --}}
+
+               
+
 
     </div>
-  
 @endsection
 
 @push('scripts')

@@ -23,16 +23,35 @@
     <div class="form-group">
         <div class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input" id="show_navbar_social_links"
-                name="show_navbar_social_links">
+                name="show_navbar_social_links" checked>
             <label class="custom-control-label" for="show_navbar_social_links">Show top bar links</label>
         </div>
     </div>
     <div class="form-group">
         <div class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input" id="show_footer_social_links"
-                name="show_footer_social_links">
+                name="show_footer_social_links" checked>
             <label class="custom-control-label" for="show_footer_social_links">Show footer links</label>
         </div>
     </div>
 
 </div>
+@push('scripts')
+    <script>
+        $('#show_navbar_social_links').change(function(){
+            if(this.checked){
+                $('#topbar-links-preview').fadeIn();
+            }else{
+                $('#topbar-links-preview').fadeOut();
+            }
+        });
+
+        $('#show_footer_social_links').change(function(){
+            if(this.checked){
+                $('#footer-links-preview').fadeIn();
+            }else{
+                $('#footer-links-preview').fadeOut();
+            }
+        });
+    </script>
+@endpush
