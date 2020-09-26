@@ -2,7 +2,7 @@
 @section('title', __('My Pages'))
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
 
 
         @if ($message = session('status'))
@@ -25,7 +25,7 @@
 
         <div class="card shadow-sm">
             <div class="card-body">
-                <h4 class="card-title">{{ __('My Pages') }} <a href="{{ route('pages.create') }}" class="btn btn-outline-dark btn-sm float-md-right">+ {{ __('Create New Page') }}</a> </h4>
+                <h4 class="card-title">{{ __('My Pages') }} <a href="{{ route('pages.create') }}" class="btn btn-outline-primary float-md-right">+ {{ __('Create New Page') }}</a> </h4>
                 {{-- <p class="card-text">{{ __('Connect with your audience') }}</p> --}}
                 @include('pages.partials.pages-table')
             </div>

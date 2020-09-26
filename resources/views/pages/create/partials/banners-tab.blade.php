@@ -5,13 +5,13 @@
         traffic to a website by linking to the website of the advertiser.</p>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="custom-file">
                 <input type="file" class="custom-file-input w-100" name="banners[]" id="banners-file" accept="image/*" multiple>
                 <label class="custom-file-label" for="banners-file">Choose Banners</label>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <button type="button" class="btn btn-light border px-4" id="btn-reset-bannners"> <i class="fas fa-redo-alt"></i> Reset</button>
         </div>
     </div>
@@ -25,7 +25,8 @@
     <script>
         function preview_image(input) {
             var total_file = input.files.length;
-            $('.banner_preview').empty()
+            $('.banner_preview').empty();
+            $('#banner_preview_side').empty();
             for (var i = 0; i < total_file; i++) {
                 $('.banner_preview').append("<img src='" + URL.createObjectURL(event.target.files[i]) + "' class='w-100 object-fit-cover mt-3 border shadow-sm' height='270'>");
                 if(i == 0){

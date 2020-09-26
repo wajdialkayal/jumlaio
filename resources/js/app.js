@@ -52,6 +52,7 @@ topbar.show();
 $(document).ready(function() {
     topbar.hide();
     $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
+    $('[data-toggle="tab"]').tooltip({ trigger: "hover" });
 });
 var t = $(window).height() / 2;
 $(window).on("scroll", function() {
@@ -62,3 +63,7 @@ $(window).on("scroll", function() {
         scrollTop: 0
     }, 0);
 });
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });

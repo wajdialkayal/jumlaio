@@ -66,7 +66,7 @@
                     <div class="input-group-prepend shadow-sm">
                     <span class="input-group-text"> <i class="fas fa-calendar"></i> </span>
                     </div>
-                    <input type="text" class="form-control shadow-sm datepicker" value="{{ \Carbon\Carbon::parse($user->birthday)->format('d/m/Y') }}" id="datepicker" name="birthday">
+                    <input type="text" class="form-control shadow-sm datepicker"  value="{{ \Carbon\Carbon::parse($user->birthday)->format('d/m/Y') }}" id="datepicker" name="birthday">
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
           </div>
     </div>  
     {{-- <input type="color" id="body" name="body" class="form-control"> --}}
-    <button type="submit" class="btn btn-dark float-right px-4" id="profile-btn-save">{{ __('Save') }}</button>
+    <button type="submit" class="btn btn-primary float-right px-4" id="profile-btn-save">{{ __('Save') }}</button>
 </form>
 
 <form id="remove-image-form" action="{{ route('profile.image.remove') }}" method="POST" class="d-none">
@@ -111,7 +111,7 @@
         });
         $( "#profile-form" ).submit(function( event ) {
             $( "#profile-btn-save" ).prop('disabled', true);
-            $( "#profile-btn-save" ).html('<div class="spinner-border text-danger spinner-border-sm" role="status"><span class="sr-only">Loading...</span></div>');
+            $( "#profile-btn-save" ).html('<div class="spinner-border text-light spinner-border-sm" role="status"><span class="sr-only">Loading...</span></div>');
 
         });
         var phone_input = document.getElementById('phone');

@@ -4,7 +4,7 @@
     </button>
 
 @else
-    <button type="button" class="btn btn-dark px-4" data-toggle="modal" data-target="#emailAlertModal">
+    <button type="button" class="btn btn-primary px-4" data-toggle="modal" data-target="#emailAlertModal">
         Enable
     </button>
 @endif
@@ -25,7 +25,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light border px-4" data-dismiss="modal">{{ __('Close') }}</button>
-                    <button type="submit" class="btn btn-dark px-4" id="email-alert-confirm-btn">{{ __('Confirm') }}</button>
+                    <button type="submit" class="btn btn-primary px-4" id="email-alert-confirm-btn">{{ __('Confirm') }}</button>
                 </div>
             </form>
         </div>

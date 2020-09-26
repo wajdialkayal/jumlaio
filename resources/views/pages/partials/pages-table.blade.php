@@ -15,8 +15,6 @@
 
 @endforeach
 
-
-</table>
 @if ($pages->isEmpty())
     <div class="text-center">
         {{ __('No pages found') }}

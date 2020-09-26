@@ -11,24 +11,32 @@
 @import '~select2-bootstrap-theme/dist/select2-bootstrap.min.css';
 @import '~sweetalert2/dist/sweetalert2.min.css';
 @import '~@fortawesome/fontawesome-free/css/all.css';
+@import './sidebar.scss';
+.main-body { padding-top: 60px; background-color: #F0F2F5; }
 
 html {
     scroll-behavior: smooth;
 }
 
 .card,
-.btn,
 .form-control,
 .dropdown-menu,
 .alert,
 .modal-content, .swal2-styled, .swal2-confirm, .swal2-styled, .swal2-cancel {
     border-radius: 10px;
 }
+
+.btn{
+    border-radius: 25px;
+}
 .swal2-modal { border-radius: 25px;}
+
 .profile-photo-input {
     display: none;
 }
-
+.menu-toggle{
+    cursor: pointer;
+}
 .swal2-styled.swal2-confirm {
     border-radius: 10px;
     background-color: $dark;
@@ -118,14 +126,20 @@ html {
     cursor: pointer;
     background-color: $red;
 }
-
+.btn-circle{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px !important;
+}
 
 .j-link {
     color: #0D6EFD !important;
     text-decoration: none;
     transition: .3s
 }
-
+.vertical-align-middle{
+    vertical-align: middle;
+}
 .j-link:hover {
     color: $red !important;
     text-decoration: none

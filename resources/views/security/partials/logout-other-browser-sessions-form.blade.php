@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-dark px-4" data-toggle="modal"
+<button type="button" class="btn btn-primary px-4" data-toggle="modal"
     data-target="#LogoutOtherBrowserSessionsModal">
     {{ __('Logout Other Browser Sessions') }}
 </button>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light border px-4" data-dismiss="modal">{{ __('Close') }}</button>
-                    <button type="submit" class="btn btn-dark px-4" id="logout-other-browser-sessions-btn">{{ __('Logout Other Browser Sessions') }}</button>
+                    <button type="submit" class="btn btn-primary px-4" id="logout-other-browser-sessions-btn">{{ __('Logout Other Browser Sessions') }}</button>
                 </div>
             </form>
         </div>

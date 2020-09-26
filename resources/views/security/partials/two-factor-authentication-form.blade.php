@@ -5,7 +5,7 @@
     </button>
 
 @else
-    <button type="button" class="btn btn-dark px-4" data-toggle="modal"
+    <button type="button" class="btn btn-primary px-4" data-toggle="modal"
         data-target="#twoFactorAuthenticationModal">
         Enable
     </button>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light border px-4" data-dismiss="modal">{{ __('Close') }}</button>
-                    <button type="submit" class="btn btn-dark px-4" id="two-factor-auth-confirm-btn">{{ __('Confirm') }}</button>
+                    <button type="submit" class="btn btn-primary px-4" id="two-factor-auth-confirm-btn">{{ __('Confirm') }}</button>
                 </div>
             </form>
         </div>

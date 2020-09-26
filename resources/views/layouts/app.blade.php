@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,17 +28,29 @@
 
     @stack('styles')
 </head>
-<body>
-    <div id="app">
-        @include('layouts.navbar')
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-        @include('layouts.back-to-top-btn')
-        @include('layouts.footer')
+<body class="main-body">
+    <div id="app">
+
+        <div class="d-flex" id="wrapper">
+            @auth
+                @include('layouts.sidebar')
+            @endauth
+            
+
+            <div id="page-content-wrapper">
+                @include('layouts.navbar')
+
+                <main class="py-4">
+                    @yield('content')
+                </main>
+                @include('layouts.back-to-top-btn')
+                @include('layouts.footer')
+            </div>
+        </div>
     </div>
     <script src="{{ mix('js/app.js') }}"></script>
     @stack('scripts')
 </body>
+
 </html>

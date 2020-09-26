@@ -5,7 +5,7 @@
     <div class="collapse" id="collapseContact">
         <div class="row">
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="location" class="font-weight-bold"> <i class="fas fa-map-marker-alt text-danger"></i>
                         {{ __('Location') }} </label>
@@ -15,7 +15,7 @@
                 </div>
             </div>
         
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="website_url" class="font-weight-bold"> <i class="fas fa-globe"></i> {{ __('Website') }}
                         </label>
@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="contacnt_email" class="font-weight-bold"> <i class="fas fa-envelope"></i>
                         {{ __('Contacnt email') }} </label>
@@ -37,7 +37,7 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="contacnt_phone" class="font-weight-bold"> <i class="fas fa-phone-alt"></i>
                         {{ __('Contacnt phone') }} </label>
@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="whatsapp" class="font-weight-bold"> <i class="fab fa-whatsapp text-success"></i>
                         {{ __('WhatsApp') }} </label>
@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="telegram" class="font-weight-bold"> <i class="fab fa-telegram text-info"></i>
                         {{ __('Telegram') }} </label>
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="Skype" class="font-weight-bold"> <i class="fab fa-skype text-primary"></i>
                         {{ __('skype') }} </label>
@@ -77,7 +77,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="viber" class="font-weight-bold"> <i class="fab fa-viber text-primary"></i>
                         {{ __('Viber') }} </label>
@@ -97,7 +97,7 @@
     <div class="collapse" id="collapseLinks">
         <div class="row">
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="facebook_url" class="font-weight-bold"> <i class="fab fa-facebook text-primary"></i>
                         {{ __('Facebook Link') }} </label>
@@ -108,7 +108,7 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="instagram_url" class="font-weight-bold"> <i class="fab fa-instagram text-dark"></i>
                         {{ __('Instagram Link') }} </label>
@@ -119,7 +119,7 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="twitter_url" class="font-weight-bold"> <i class="fab fa-twitter  text-info"></i>
                         {{ __('Twitter Link') }} </label>
@@ -129,7 +129,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="vk_url" class="font-weight-bold"> <i class="fab fa-vk text-primary"></i> {{ __('VK Link') }}
                         </label>
@@ -140,7 +140,7 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="youtube_channel_url" class="font-weight-bold"> <i class="fab fa-youtube text-danger"></i>
                         {{ __('YouTube Link') }} </label>
@@ -150,7 +150,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="github_url" class="font-weight-bold"> <i class="fab fa-github text-dark"></i>
                         {{ __('Github Link') }} </label>
@@ -160,7 +160,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="linkedin_url" class="font-weight-bold"> <i class="fab fa-linkedin text-primary"></i>
                         {{ __('Linkedin Link') }} </label>
@@ -170,7 +170,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="reddit_url" class="font-weight-bold"> <i class="fab fa-reddit text-danger"></i>
                         {{ __('Redddit Link') }} </label>
@@ -181,7 +181,7 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="dribbble_url" class="font-weight-bold"> <i class="fab fa-dribbble text-danger"></i>
                         {{ __('Dribbble Link') }} </label>
@@ -191,7 +191,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="pinterest_url" class="font-weight-bold"> <i class="fab fa-pinterest text-danger"></i>
                         {{ __('Pinterest Link') }} </label>
@@ -202,7 +202,7 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="discord_url" class="font-weight-bold"> <i class="fab fa-discord text-primary"></i>
                         {{ __('Discord Link') }} </label>
@@ -213,7 +213,7 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="soundcloud_url" class="font-weight-bold"> <i class="fab fa-soundcloud"></i>
                         {{ __('Soundcloud Link') }} </label>
@@ -224,7 +224,7 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="itunes_url" class="font-weight-bold"> <i class="fab fa-itunes text-info"></i>
                         {{ __('itunes Link') }} </label>
@@ -235,7 +235,7 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="spotify_url" class="font-weight-bold"> <i class="fab fa-spotify text-success"></i>
                         {{ __('Spotify Link') }} </label>
@@ -255,7 +255,7 @@
     <div class="collapse" id="collapseApps">
         <div class="row">
         
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="ios_app_url" class="font-weight-bold"> <i class="fab fa-apple"></i> {{ __('IOS App') }}
                         </label>
@@ -265,7 +265,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="android_app_url" class="font-weight-bold"> <i class="fab fa-android text-success"></i>
                         {{ __('Android App') }} </label>

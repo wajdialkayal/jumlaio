@@ -25,5 +25,5 @@
         @enderror
     </div>
 
-    <button type="submit" class="btn btn-dark px-4" id="security-password-update-save-btn">{{ __('Save') }}</button>
+    <button type="submit" class="btn btn-primary px-4" id="security-password-update-save-btn">{{ __('Save') }}</button>
 </form>

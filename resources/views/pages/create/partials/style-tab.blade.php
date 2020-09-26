@@ -21,7 +21,7 @@
     <div class="collapse" id="collapsBodyBgColor">
         <div class="form-group">
             <label for="body_bg_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Page Background Color') }}</label>
-            <input type="color" name="body_bg_color" id="body_bg_color" class="form-control shadow-sm w-25" value="{{old('body_bg_color') ? old('body_bg_color') : '#FFFFFF'}}">
+            <input type="color" name="body_bg_color" id="body_bg_color" class="form-control shadow-sm w-100" value="{{old('body_bg_color') ? old('body_bg_color') : '#FFFFFF'}}">
         </div>
     </div>
 
@@ -34,12 +34,12 @@
         
         <div class="form-group">
             <label for="topbar_text_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Top Bar Text Color') }}</label>
-            <input type="color" name="topbar_text_color" id="topbar_text_color" class="form-control shadow-sm w-25" value="{{old('topbar_text_color') ? old('topbar_text_color') : '#FFFFFF'}}">
+            <input type="color" name="topbar_text_color" id="topbar_text_color" class="form-control shadow-sm w-100" value="{{old('topbar_text_color') ? old('topbar_text_color') : '#FFFFFF'}}">
         </div>
 
         <div class="form-group">
             <label for="topbar_bg_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Top Bar background color') }}</label>
-            <input type="color" name="topbar_bg_color" id="topbar_bg_color" class="form-control shadow-sm w-25" value="{{old('topbar_bg_color') ? old('topbar_bg_color') : '#111111'}}">
+            <input type="color" name="topbar_bg_color" id="topbar_bg_color" class="form-control shadow-sm w-100" value="{{old('topbar_bg_color') ? old('topbar_bg_color') : config('constants.default_primary_color') }}">
         </div>
     </div>
 
@@ -61,12 +61,12 @@
         <div id="mbar-section">
             <div class="form-group">
                 <label for="mbar_text_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Middle-bar text color') }}</label>
-                <input type="color" name="mbar_text_color" id="mbar_text_color" class="form-control shadow-sm w-25" value="{{old('mbar_text_color') ? old('mbar_text_color') : '#111111'}}">
+                <input type="color" name="mbar_text_color" id="mbar_text_color" class="form-control shadow-sm w-100" value="{{old('mbar_text_color') ? old('mbar_text_color') : config('constants.default_primary_color') }}">
             </div>
         
             <div class="form-group">
                 <label for="mbar_bg_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Middle-bar background color') }}</label>
-                <input type="color" name="mbar_bg_color" id="mbar_bg_color" class="form-control shadow-sm w-25" value="{{old('mbar_bg_color') ? old('mbar_bg_color') : '#FFFFFF'}}">
+                <input type="color" name="mbar_bg_color" id="mbar_bg_color" class="form-control shadow-sm w-100" value="{{old('mbar_bg_color') ? old('mbar_bg_color') : '#FFFFFF'}}">
             </div>
         </div>
     </div>
@@ -87,12 +87,12 @@
         <div id="btt-section">
             <div class="form-group">
                 <label for="back_to_top_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Back to top button color') }}</label>
-                <input type="color" name="back_to_top_color" id="back_to_top_color" class="form-control shadow-sm w-25" value="{{old('back_to_top_color') ? old('back_to_top_color') : '#FFFFFF'}}">
+                <input type="color" name="back_to_top_color" id="back_to_top_color" class="form-control shadow-sm w-100" value="{{old('back_to_top_color') ? old('back_to_top_color') : '#FFFFFF'}}">
             </div>
 
             <div class="form-group">
                 <label for="back_to_top_bg_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Back to top button background color') }}</label>
-                <input type="color" name="back_to_top_bg_color" id="back_to_top_bg_color" class="form-control shadow-sm w-25" value="{{old('back_to_top_bg_color') ? old('back_to_top_bg_color') : '#111111'}}">
+                <input type="color" name="back_to_top_bg_color" id="back_to_top_bg_color" class="form-control shadow-sm w-100" value="{{old('back_to_top_bg_color') ? old('back_to_top_bg_color') : config('constants.default_primary_color')}}">
             </div>
         </div>
     </div>
@@ -113,17 +113,17 @@
         <div id="scrollbar-section">
             <div class="form-group">
                 <label for="scrollbar_trak_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Trak color') }}</label>
-                <input type="color" name="scrollbar_trak_color" id="scrollbar_trak_color" class="form-control shadow-sm w-25" value="{{old('scrollbar_trak_color') ? old('scrollbar_trak_color') : '#FFFFFF'}}">
+                <input type="color" name="scrollbar_trak_color" id="scrollbar_trak_color" class="form-control shadow-sm w-100" value="{{old('scrollbar_trak_color') ? old('scrollbar_trak_color') : '#FFFFFF'}}">
             </div>
         
             <div class="form-group">
                 <label for="scrollbar_handle_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Scrollbar handle color') }}</label>
-                <input type="color" name="scrollbar_handle_color" id="scrollbar_handle_color" class="form-control shadow-sm w-25" value="{{old('scrollbar_handle_color') ? old('scrollbar_handle_color') : '#111111'}}">
+                <input type="color" name="scrollbar_handle_color" id="scrollbar_handle_color" class="form-control shadow-sm w-100" value="{{old('scrollbar_handle_color') ? old('scrollbar_handle_color') : config('constants.default_primary_color')}}">
             </div>
         
             <div class="form-group">
                 <label for="scrollbar_hover_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Scrollbar Hover color') }}</label>
-                <input type="color" name="scrollbar_hover_color" id="scrollbar_hover_color" class="form-control shadow-sm w-25" value="{{old('scrollbar_hover_color') ? old('scrollbar_hover_color') : '#EC1D25'}}">
+                <input type="color" name="scrollbar_hover_color" id="scrollbar_hover_color" class="form-control shadow-sm w-100" value="{{old('scrollbar_hover_color') ? old('scrollbar_hover_color') : '#EC1D25'}}">
             </div>
         </div>
     </div>
@@ -136,17 +136,17 @@
     <div class="collapse" id="collapseButton">
         <div class="form-group">
             <label for="btn_bg_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Button background color') }}</label>
-            <input type="color" name="btn_bg_color" id="btn_bg_color" class="form-control shadow-sm w-25" value="{{old('btn_bg_color') ? old('btn_bg_color') : '#111111'}}">
+            <input type="color" name="btn_bg_color" id="btn_bg_color" class="form-control shadow-sm w-100" value="{{old('btn_bg_color') ? old('btn_bg_color') : config('constants.default_primary_color')}}">
         </div>
 
         <div class="form-group">
             <label for="btn_text_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Button text color') }}</label>
-            <input type="color" name="btn_text_color" id="btn_text_color" class="form-control shadow-sm w-25" value="{{old('btn_text_color') ? old('btn_text_color') : '#FFFFFF'}}">
+            <input type="color" name="btn_text_color" id="btn_text_color" class="form-control shadow-sm w-100" value="{{old('btn_text_color') ? old('btn_text_color') : '#FFFFFF'}}">
         </div>
 
         <div class="form-group">
             <label for="btn_style" class="font-weight-bold">{{ __('Button Style') }}</label>
-            <select name="btn_style" id="btn_style" class="form-control shadow-sm w-25">
+            <select name="btn_style" id="btn_style" class="form-control shadow-sm w-100">
                 <option value="normal">Normal</option>
                 <option value="rounded">Rounded</option>
             </select>
@@ -163,17 +163,17 @@
 
         <div class="form-group">
             <label for="card_bg_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Card background color') }}</label>
-            <input type="color" name="card_bg_color" id="card_bg_color" class="form-control shadow-sm w-25" value="{{old('card_bg_color') ? old('card_bg_color') : '#FFFFFF'}}">
+            <input type="color" name="card_bg_color" id="card_bg_color" class="form-control shadow-sm w-100" value="{{old('card_bg_color') ? old('card_bg_color') : '#FFFFFF'}}">
         </div>
 
         <div class="form-group">
             <label for="card_text_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Card text color') }}</label>
-            <input type="color" name="card_text_color" id="card_text_color" class="form-control shadow-sm w-25" value="{{old('card_text_color') ? old('card_text_color') : '#111111'}}">
+            <input type="color" name="card_text_color" id="card_text_color" class="form-control shadow-sm w-100" value="{{old('card_text_color') ? old('card_text_color') : config('constants.default_primary_color')}}">
         </div>
 
         <div class="form-group">
             <label for="card_shadow" class="font-weight-bold"> <i class="fas fa-adjust"></i> {{ __('Card shadow') }}</label>
-            <select name="card_shadow" id="card_shadow" class="form-control w-25 shadow-sm">
+            <select name="card_shadow" id="card_shadow" class="form-control w-100 shadow-sm">
                 <option value="shadow-none">None</option>
                 <option value="shadow-sm" selected>Small</option>
                 <option value="shadow">Medium</option>
@@ -200,12 +200,12 @@
 
         <div class="form-group">
             <label for="footer_text_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Footer text color') }}</label>
-            <input type="color" name="footer_text_color" id="footer_text_color" class="form-control shadow-sm w-25" value="{{old('footer_text_color') ? old('footer_text_color') : '#FFFFFF'}}">
+            <input type="color" name="footer_text_color" id="footer_text_color" class="form-control shadow-sm w-100" value="{{old('footer_text_color') ? old('footer_text_color') : '#FFFFFF'}}">
         </div>
 
         <div class="form-group">
             <label for="footer_bg_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Footer background color') }}</label>
-            <input type="color" name="footer_bg_color" id="footer_bg_color" class="form-control shadow-sm w-25" value="{{old('footer_bg_color') ? old('footer_bg_color') : '#111111'}}">
+            <input type="color" name="footer_bg_color" id="footer_bg_color" class="form-control shadow-sm w-100" value="{{old('footer_bg_color') ? old('footer_bg_color') : config('constants.default_primary_color')}}">
         </div>
     </div>
 </div>
@@ -304,7 +304,7 @@
         if($(this).val() == 'rounded'){
             $('.btn-preview').css("border-radius", '25px');
         }else{
-            $('.btn-preview').css("border-radius", '10px');
+            $('.btn-preview').css("border-radius", '0px');
         }
     });
     $("#footer_text").on("input", function() {
@@ -316,11 +316,11 @@
     });
 
     $('#back_to_top_color').on("input",function() {
-        $('.btn-back-to-top-preview').css('color', $(this).val());
+        $('#btn-back-to-top-preview').css('color', $(this).val());
     });
 
     $('#back_to_top_bg_color').on("input",function() {
-        $('.btn-back-to-top-preview').css('background-color', $(this).val());
+        $('#btn-back-to-top-preview').css('background-color', $(this).val());
     });
 
     
