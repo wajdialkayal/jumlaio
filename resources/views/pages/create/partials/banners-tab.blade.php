@@ -28,7 +28,7 @@
             $('.banner_preview').empty();
             $('#banner_preview_side').empty();
             for (var i = 0; i < total_file; i++) {
-                $('.banner_preview').append("<img src='" + URL.createObjectURL(event.target.files[i]) + "' class='w-100 object-fit-cover mt-3 border shadow-sm' height='270'>");
+                $('.banner_preview').append("<img src='" + URL.createObjectURL(event.target.files[i]) + "' class='w-100 object-fit-cover mt-3 border shadow-sm' height='150'>");
                 if(i == 0){
                     $('#banner_preview_side').append("<img src='" + URL.createObjectURL(event.target.files[i]) + "' class='w-100 object-fit-cover' height='270'>");
                 }

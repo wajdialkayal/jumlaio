@@ -1,19 +1,21 @@
-@foreach ($pages as $page)
+<div class="mt-4">
+    @foreach ($pages as $page)
 
-    <div class="card shadow-sm mt-3">
-        <div class="card-body">
-            <p class="float-right"> Created: {{ $page->created_at->format('d/m/Y') }} </p>
-            <h4 class="card-title"> <img src="{{ $page->logo_url }}" class="rounded-circle shadow-sm object-fit-cover" width="80"
-                    height="80" alt=""> {{ $page->name }}</h4>
-            <p class="card-text">
-                <a href="{{ url('page/'.$page->subdomain) }}" class="btn btn-link" target="_blank"><i class="fas fa-external-link-alt"></i> {{ url($page->subdomain) }}</a> 
-                <a href="#" class="btn btn-link float-right"><i class="fas fa-cog"></i> Settings</a>
-            </p>
-            
+        <div class="card shadow-sm mt-2">
+            <div class="card-body">
+                <p class="float-right"> Created: {{ $page->created_at->format('d/m/Y') }} </p>
+                <h4 class="card-title"> <img src="{{ $page->logo_url }}" class="rounded-circle border shadow-sm object-fit-cover" width="80"
+                        height="80" alt=""> {{ $page->name }}</h4>
+                <p class="card-text">
+                    <a href="{{ url('page/'.$page->subdomain) }}" class="btn btn-link" target="_blank"><i class="fas fa-external-link-alt"></i> {{ url($page->subdomain) }}</a> 
+                    <a href="#" class="btn btn-link float-right"><i class="fas fa-cog"></i> Settings</a>
+                </p>
+                
+            </div>
         </div>
-    </div>
 
-@endforeach
+    @endforeach
+</div>
 
 @if ($pages->isEmpty())
     <div class="text-center">

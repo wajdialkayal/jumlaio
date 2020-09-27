@@ -50,7 +50,7 @@ class ProfileController extends Controller
             $usernameGenerator = new UsernameGeneratorService();
             $user->username =  $usernameGenerator->setUsername($request->username);
         }
-        $user->birthday = Carbon::createFromFormat('d/m/Y', $request->birthday)->format('Y-m-d');
+        $user->birthday = $request->birthday ? Carbon::createFromFormat('d/m/Y', $request->birthday)->format('Y-m-d') : null;
 
         $user->private =  $request->private ? false : true;
 

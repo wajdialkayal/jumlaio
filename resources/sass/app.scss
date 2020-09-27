@@ -26,8 +26,24 @@ html {
     border-radius: 10px;
 }
 
-.btn{
+.btn, .form-control{
     border-radius: 25px;
+    
+}
+.input-search {
+    position: relative;
+}
+ 
+.input-search:before {
+    content: "\f002";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    color: #9d9d9d;
+    padding-left: 0.5em;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    
 }
 .swal2-modal { border-radius: 25px;}
 
@@ -38,14 +54,14 @@ html {
     cursor: pointer;
 }
 .swal2-styled.swal2-confirm {
-    border-radius: 10px;
-    background-color: $dark;
+    border-radius: 25px;
+    background-color: $blue;
     font-size: 0.9em;
     box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;
   }
   .swal2-styled.swal2-cancel {
     border: 1px solid #dee2e6;
-    border-radius: 10px;
+    border-radius: 25px;
     background-color: #F8F9Fa;
     color: #212529;
     font-size: 0.9em;
@@ -104,7 +120,7 @@ html {
     height: 40px;
     bottom: 40px;
     right: 40px;
-    background-color: #111111;
+    background-color: $blue;
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -238,4 +254,35 @@ btn-check:focus+.btn-twitter,
 
 .panel-title[aria-expanded="true"]::after {
 	content: '\f106';
+}
+
+
+.create-page-tab{
+        overflow-y: scroll;
+        height:calc(100vh - 364px);
+}
+
+.create-page-tab::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.create-page-tab::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey; 
+    border-radius: 25px;
+}
+
+/* Handle */
+.create-page-tab::-webkit-scrollbar-thumb {
+    background: $light; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.create-page-tab::-webkit-scrollbar-thumb:hover {
+    background: #009eb3; 
+}
+
+.create-page-tab::-webkit-scrollbar-thumb:hover {
+    background: #009eb3; 
 }

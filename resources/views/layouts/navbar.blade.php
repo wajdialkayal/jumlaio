@@ -15,7 +15,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto"> 
-                
+                <li class="nav-item">
+      
+                    <div class="input-search"> 
+                        <input type="text" placeholder="Search" name="uname" class="form-control form-control-sm finput" >  
+                    </div> 
+                </li>
                 
             </ul>
 

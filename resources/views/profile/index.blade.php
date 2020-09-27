@@ -2,7 +2,7 @@
 @section('title', __('Profile'))
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
 
 
         @if ($message = session('status'))
@@ -20,15 +20,7 @@
             @include('alerts.email-verify')
         @endif
 
-        @if ($message = session('success'))
-            @include('alerts.success')
-        @endif
-
-        @if ($message = session('error'))
-            @include('alerts.error')
-        @endif
-
-
+      
         @foreach ($errors->all() as $message)
             @include('alerts.error')
         @endforeach
@@ -42,3 +34,15 @@
 
     </div>
 @endsection
+@push('scripts')
+
+    @if ($message = session('success'))
+        @include('alerts.swal-success')
+    @endif
+
+    @if ($message = session('error'))
+        @include('alerts.swal-error')
+    @endif
+
+@endpush
+

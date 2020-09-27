@@ -33,8 +33,7 @@ class UpdateProfileRequest extends FormRequest
             'photo' => ['nullable', 'image', 'max:1024'],
             'username' => ['required', 'string', 'max:255', Rule::unique('users')->ignore(Auth::id())],
             'birthdate' => ['nullable', 'date'],
-            'private' => ['nullable', 'boolean'],
-
+            //'private' => ['required', 'boolean'],
         ];
     }
 }

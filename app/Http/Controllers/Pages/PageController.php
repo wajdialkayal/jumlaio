@@ -64,6 +64,7 @@ class PageController extends Controller
         $page->slug = $generatoService->setSlug($page_name);
         $page->subdomain = Str::slug($page->slug, '');
 
+        //contact & social media
         $page->facebook_url = $request->facebook_url;
         $page->instagram_url = $request->instagram_url;
         $page->twitter_url = $request->twitter_url;
@@ -78,8 +79,6 @@ class PageController extends Controller
         $page->soundcloud_url = $request->soundcloud_url;
         $page->itunes_url = $request->itunes_url;
         $page->spotify_url = $request->spotify_url;
-            
-
         $page->website_url = $request->website_url;
         $page->location = $request->location;
         $page->contact_email = $request->contact_email;
@@ -89,45 +88,105 @@ class PageController extends Controller
         $page->ios_app_url = $request->ios_app_url;
         $page->android_app_url = $request->android_app_url;
 
-        //style
-        $page->page_font = $request->page_font;
-        $page->body_bg_color = $request->body_bg_color;
-        $page->topbar_text_color = $request->topbar_text_color;
-        $page->topbar_bg_color = $request->topbar_bg_color;
-        $page->mbar_text_color = $request->mbar_text_color;
-        $page->mbar_bg_color = $request->mbar_bg_color;
-        $page->back_to_top_color = $request->back_to_top_color;
-        $page->back_to_top_bg_color = $request->back_to_top_bg_color;
-        $page->scrollbar_trak_color = $request->scrollbar_trak_color;
-        $page->scrollbar_handle_color = $request->scrollbar_handle_color;
-        $page->scrollbar_hover_color = $request->scrollbar_hover_color;
-        $page->btn_bg_color = $request->btn_bg_color;
-        $page->btn_text_color = $request->btn_text_color;
-        $page->btn_style = $request->btn_style;
-        $page->card_shadow = $request->card_shadow;
-        $page->card_bg_color = $request->card_bg_color;
-        $page->card_text_color = $request->card_text_color;
-        $page->footer_text = $request->footer_text;
-        $page->footer_text_color = $request->footer_text_color;
-        $page->footer_bg_color = $request->footer_bg_color;
+        $style = '
+            .body{ background-color: ' . $request->body_bg_color . ' ; }
+            *{ font-family:  ' . $request->page_font . ' ; }
 
-   
+            .navbar-brand{ color: ' .  $request->topbar_text_color . ' ; }
+            .navbar { background-color: ' .  $request->topbar_bg_color . ' ; }
+            .nav-link, .fa-bars { color: ' .  $request->topbar_text_color . ' ;}
+            .nav-link:hover{ color: ' .  $request->topbar_text_color_hover . ' ;}
+            .nav-brand:hover{ color: ' .  $request->topbar_text_color_hover . ' ;}
+
+            .navbar-toggler{ border-color: ' .  $request->topbar_text_color . '; }
+            
+            
+            .mbar{ background-color: ' .  $request->mbar_bg_color . ' ; color: ' .  $request->mbar_text_color . ' ; height: 250px; }
+            
+            .banner-image{ height: 350px; }
+
+            .btn-back-to-top-page {
+                display: none;
+                position: fixed;
+                width: 40px;
+                height: 40px;
+                bottom: 40px;
+                right: 40px;
+                background-color: ' .  $request->back_to_top_bg_color  . ' ;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                border-radius: 25px;
+                transition: all .4s;
+                -webkit-transition: all .4s;
+                -o-transition: all .4s;
+                -moz-transition: all .3s
+            }
+        
+            .symbol-btn-back-to-top-page { font-size: 22px; color: ' .  $request->back_to_top_color  . ' ; line-height: 1em; }
+            .symbol-btn-back-to-top-page:hover { color: ' .  $request->back_to_top_color_hover  . ' ; }
+
+            .btn-back-to-top-page:hover {
+                cursor: pointer;
+                background-color: ' .  $request->back_to_top_bg_color_hover  . ' ;
+            }
+        
+            .page-footer{
+                color: ' .  $request->footer_text_color  . ' ;
+                background-color: ' .  $request->footer_bg_color  . ' ;
+            }
+            
+            .footer-link, .social-btn{
+                color: ' .  $request->footer_text_color  . ' ;
+            }
+            
+            
+            .page-btn{
+                background: ' .  $request->btn_bg_color  . '; 
+                color: ' .  $request->btn_text_color  . '; 
+            }
+            .page-btn:hover{
+                background: ' .  $request->btn_bg_color_hover  . '; 
+                color: ' .  $request->btn_text_color_hover  . '; 
+            }
+
+            .card{
+                background: ' .  $request->card_bg_color  . '; 
+                color: ' .  $request->card_text_color  . '; 
+            }
+            .mbar-logo{
+                width: 145px;
+                height: 145px;
+            }
+            .object-fit-cover{object-fit: cover}
+        ';
+        if($page->btn_style == 'rounded'){
+            $style .= '.page-btn{border-radius: 25px;}';
+        }else{
+            $style .= '.page-btn{border-radius: 0px;}';
+        }
+        
+
+
+        //style
+
+        $page->style = $style;
+        $page->card_shadow = $request->card_shadow;
+        $page->footer_text_color = $request->footer_text_color;
+
+        //SEO
         $page->meta_title = $request->meta_title;
         $page->meta_tag_description = $request->meta_tag_description;
         $page->meta_tag_keywords = $request->meta_tag_keywords;
 
-        $page->show_number_of_followers = $request->show_number_of_followers ? true : false;
-        $page->show_number_of_posts = $request->show_number_of_posts ? true : false;
-        $page->show_total_views = $request->show_total_views ? true : false;
+        //options
         $page->show_navbar_social_links = $request->show_navbar_social_links ? true : false;
         $page->show_footer_social_links = $request->show_footer_social_links ? true : false;
-
-        $page->scrollbar_default = $request->scrollbar_default ? true : false;
         $page->show_mbar = $request->show_mbar ? true : false;
         $page->show_back_to_top_btn = $request->show_back_to_top_btn ? true : false;
 
 
-        
+
         $page->owner_id = Auth::user()->id;
         $page->save();
         if (isset($request->logo)) {
@@ -136,7 +195,7 @@ class PageController extends Controller
         if (isset($request->favicon)) {
             $page->updateFavicon($request->favicon);
         }
-        
+
         if ($request->hasFile('banners')) {
             foreach ($request->banners as $banner_image) {
                 $banner = new Banner();

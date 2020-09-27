@@ -66,7 +66,7 @@
                     <div class="input-group-prepend shadow-sm">
                     <span class="input-group-text"> <i class="fas fa-calendar"></i> </span>
                     </div>
-                    <input type="text" class="form-control shadow-sm datepicker"  value="{{ \Carbon\Carbon::parse($user->birthday)->format('d/m/Y') }}" id="datepicker" name="birthday">
+                    <input type="text" class="form-control shadow-sm datepicker"  value="{{ $user->birthday ? \Carbon\Carbon::parse($user->birthday)->format('d/m/Y') : '' }}" id="datepicker" name="birthday">
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@
         <div class="custom-control custom-switch d-inline ml-3" >
             <input type="checkbox" class="custom-control-input" id="privateSwitch" name="private" @if(!$user->private) checked @endif>
             <label class="custom-control-label" for="privateSwitch"></label>
-          </div>
+        </div>
     </div>  
     {{-- <input type="color" id="body" name="body" class="form-control"> --}}
     <button type="submit" class="btn btn-primary float-right px-4" id="profile-btn-save">{{ __('Save') }}</button>

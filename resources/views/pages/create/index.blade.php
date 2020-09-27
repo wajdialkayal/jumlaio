@@ -69,7 +69,7 @@
                           </ul>
             
             
-                          <div class="tab-content" id="pageTabContent" style="overflow-y: scroll;height:calc(100vh - 364px);">
+                          <div class="tab-content create-page-tab" id="pageTabContent">
             
                             <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
                                 @include('pages.create.partials.general-tab')
@@ -118,21 +118,19 @@
 
 @push('scripts')
     <script>
-        window.onbeforeunload = function (e) {
-            e = e || window.event;
-
-            // For IE and Firefox prior to version 4
-            if (e) {
-                e.returnValue = 'Any string';
+        var hook = true;
+        window.onbeforeunload = function() {
+            if (hook) {
+                return "Did you save your stuff?"
             }
-
-            // For Safari
-            return 'Any string';
-        };
-
+        }
+        function unhook() {
+            hook = false;
+        }
     $( "#page-create-form" ).submit(function( event ) {
+        unhook();
         $( "#page-create-btn" ).prop('disabled', true);
-        $( "#page-create-btn" ).html('<div class="spinner-border text-danger spinner-border-sm" role="status"><span class="sr-only">Loading...</span></div>');
+        $( "#page-create-btn" ).html('<div class="spinner-border text-light spinner-border-sm" role="status"><span class="sr-only">Loading...</span></div>');
     });
     </script>
 @endpush

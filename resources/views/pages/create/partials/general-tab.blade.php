@@ -29,7 +29,7 @@
 
     
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="form-group">
                 <label for="page_name" class="font-weight-bold">
                     {{ __('Page Name') }}* 
@@ -40,7 +40,7 @@
                 <input type="text" name="page_name" id="page_name" class="form-control shadow-sm" value="{{ old('page_name') }}" maxlength="255" required>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="form-group">
                 <label for="" class="font-weight-bold"> 
                     <i class="fas fa-tag"></i> {{ __('Category') }}* 
@@ -48,7 +48,7 @@
                         <i class="fas fa-question-circle"></i>
                     </a>
                 </label>
-                <select class="form-contol shadow-sm" name="categories[]" id="category-select" multiple="multiple" required>
+                <select class="form-contol shadow-sm"  name="categories[]" id="category-select" multiple="multiple" required>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ __($category->display_name) }}</option>                    
                     @endforeach

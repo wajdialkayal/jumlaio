@@ -26,6 +26,7 @@ class CreatePagesTable extends Migration
             
             $table->longText('about')->nullable();
             $table->string('short_description')->nullable();
+            $table->longText('style');
 
             //contact
             $table->string('facebook_url')->nullable();
@@ -56,35 +57,8 @@ class CreatePagesTable extends Migration
             $table->string('android_app_url')->nullable();
 
             //style
-            $table->string('page_font')->default('Montserrat, sans-serif');
-            //$table->string('page_text_color')->default('Montserrat, sans-serif');
-
-            $table->string('body_bg_color');
-
-            $table->string('topbar_text_color');
-            $table->string('topbar_bg_color');
-
-            $table->string('mbar_text_color');
-            $table->string('mbar_bg_color');
-
-            $table->string('back_to_top_color');
-            $table->string('back_to_top_bg_color');
-
-            $table->string('scrollbar_trak_color');
-            $table->string('scrollbar_handle_color');
-            $table->string('scrollbar_hover_color');
-
-            $table->string('btn_bg_color');
-            $table->string('btn_text_color');
-            $table->string('btn_style');
-
             $table->string('card_shadow');
-            $table->string('card_bg_color');
-            $table->string('card_text_color');
-
-            $table->string('footer_text')->nullable();
             $table->string('footer_text_color');
-            $table->string('footer_bg_color');
 
             $table->string('favicon_path')->nullable();
             $table->string('meta_title')->nullable();
@@ -92,20 +66,13 @@ class CreatePagesTable extends Migration
             $table->string('meta_tag_keywords')->nullable();
 
             //boolean
-            $table->boolean('show_number_of_followers')->default(1);
-            $table->boolean('show_number_of_posts')->default(1);
-            $table->boolean('show_total_views')->default(1);
             $table->boolean('show_navbar_social_links')->default(1);
             $table->boolean('show_footer_social_links')->default(1);
-            $table->boolean('scrollbar_default')->default(1);
             $table->boolean('show_mbar')->default(1);
             $table->boolean('show_back_to_top_btn')->default(1);
 
 
             $table->boolean('enabled')->default(1);
-            
-            // $table->bigInteger('category_id')->unsigned();
-            // $table->foreign('category_id')->references('id')->on('categories');
             $table->bigInteger('owner_id')->unsigned();
             $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
             $table->softDeletes();
