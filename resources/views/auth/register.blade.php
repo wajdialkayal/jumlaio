@@ -93,6 +93,11 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div>
+                <img src="{{ asset('images/Illustrations/register.svg') }}" style="width: 100%;height: auto;" alt="create-page">
+            </div>
+        </div>
     </div>
 </div>
 @endsection
@@ -103,5 +108,9 @@
             $( "#register-btn" ).html('<div class="spinner-border text-danger spinner-border-sm" role="status"><span class="sr-only">Loading...</span></div>');
 
         });
+
+        var timezone = moment.tz.guess();
+        $('#timezone').val(timezone);
+        //console.log(timezone);
     </script>
 @endpush

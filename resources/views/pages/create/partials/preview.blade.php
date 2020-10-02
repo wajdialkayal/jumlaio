@@ -118,6 +118,8 @@
 
                 <div class="container p-5" id="body-preview">
 
+                    <h5 id="body-text-preview">Body Text</h5>
+
                     <div class="card" id="card-preview">
                         <div class="card-body">
                             <h4 class="card-title">Card</h4>

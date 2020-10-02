@@ -16,11 +16,10 @@
     @stack('styles')
 </head>
 
-<body>
+<body class="body">
     <div id="app">
-        @include('page.layouts.navbar')
-        @include('page.layouts.middle-bar')
-        @include('page.layouts.banners')
+        
+        @yield('includes')
 
         <main class="py-4">
             @yield('content')

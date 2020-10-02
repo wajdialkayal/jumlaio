@@ -38,30 +38,30 @@
                         <ul class="nav nav-tabs justify-content-center" id="pageTab" role="tablist">
             
                             <li class="nav-item" role="presentation">
-                                <a class="btn btn-circle btn-light border m-2 active"  data-popover="tooltip" data-placement="top" title="{{ __('General') }}" id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true">
+                                <a class="btn btn-light border m-2 active"  data-popover="tooltip" data-placement="top" title="{{ __('General') }}" id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true">
                                   <i class="fas fa-info-circle vertical-align-middle"></i>
                                 </a>
                             </li>
             
                             <li class="nav-item" role="presentation">
-                                <a class="btn btn-circle btn-light border m-2"  data-popover="tooltip" data-placement="top" title="{{ __('Contact & Social Media') }}" id="contact-social-tab" data-toggle="tab" href="#contact-social" role="tab" aria-controls="contact-social" aria-selected="false">
+                                <a class="btn btn-light border m-2"  data-popover="tooltip" data-placement="top" title="{{ __('Contact & Social Media') }}" id="contact-social-tab" data-toggle="tab" href="#contact-social" role="tab" aria-controls="contact-social" aria-selected="false">
                                   <i class="fas fa-phone-alt vertical-align-middle"></i>
                                 </a>
                             </li>
             
                             <li class="nav-item" role="presentation">
-                                <a class="btn btn-circle btn-light border m-2"  data-popover="tooltip" data-placement="top" title="{{ __('Style') }}" id="style-tab" data-toggle="tab" href="#style" role="tab" aria-controls="style" aria-selected="false">
+                                <a class="btn btn-light border m-2"  data-popover="tooltip" data-placement="top" title="{{ __('Style') }}" id="style-tab" data-toggle="tab" href="#style" role="tab" aria-controls="style" aria-selected="false">
                                   <i class="fas fa-palette vertical-align-middle"></i>
                                 </a>
                             </li>
             
                             <li class="nav-item" role="presentation">
-                                <a class="btn btn-circle btn-light border m-2"  data-popover="tooltip" data-placement="top" title="{{ __('Options') }}" id="options-tab" data-toggle="tab" href="#options" role="tab" aria-controls="options" aria-selected="false">
+                                <a class="btn btn-light border m-2"  data-popover="tooltip" data-placement="top" title="{{ __('Options') }}" id="options-tab" data-toggle="tab" href="#options" role="tab" aria-controls="options" aria-selected="false">
                                     <i class="fas fa-sliders-h vertical-align-middle"></i>
                                 </a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="btn btn-circle btn-light border m-2"  data-popover="tooltip" data-placement="top" title="{{ __('Banners') }}" id="banners-tab" data-toggle="tab" href="#banners" role="tab" aria-controls="banners" aria-selected="false">
+                                <a class="btn btn-light border m-2"  data-popover="tooltip" data-placement="top" title="{{ __('Banners') }}" id="banners-tab" data-toggle="tab" href="#banners" role="tab" aria-controls="banners" aria-selected="false">
                                     <i class="far fa-images vertical-align-middle"></i>
                                 </a>
                             </li>

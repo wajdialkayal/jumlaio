@@ -7,8 +7,9 @@ use App\Http\Requests\CreatePageRequest;
 use App\Models\Banner;
 use App\Models\Category;
 use App\Models\Page;
+use App\Models\Post;
+use App\Models\Role;
 use App\Services\SlugGeneratorService;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -23,21 +24,24 @@ class PageController extends Controller
     }
 
     public function index()
-    {
-        $pages = Page::where('owner_id', Auth::id())->orderBy('created_at', 'DESC')->get();
-
+    {        
         return view('pages.index', [
-            'pages' => $pages
+            'pages' => Auth::user()->pages()->withCount('followers')->orderBy('created_at', 'DESC')->get()
         ]);
     }
 
-    // public function show($subdomain)
-    // {
-    //     $page = Page::with('banners')->where('subdomain', $subdomain)->firstOrFail();
-    //     return view('page.index', [
-    //         'page' => $page
-    //     ]);
-    // }
+    public function show($id)
+    {
+
+        $page = Page::withCount(['posts', 'likes', 'comments', 'shares', 'followers', 'page_views'])
+        ->whereHas('users', function($query) {
+            $query->where('user_id', Auth::id());
+        })->findOrFail($id);
+   
+        return view('pages.dashboard.index', [
+            'page' => $page
+        ]);
+    }
 
     public function create()
     {
@@ -89,7 +93,7 @@ class PageController extends Controller
         $page->android_app_url = $request->android_app_url;
 
         $style = '
-            .body{ background-color: ' . $request->body_bg_color . ' ; }
+            .body{ background-color: ' . $request->body_bg_color . ' !important; color: ' . $request->body_text_color . '; }
             *{ font-family:  ' . $request->page_font . ' ; }
 
             .navbar-brand{ color: ' .  $request->topbar_text_color . ' ; }
@@ -186,8 +190,6 @@ class PageController extends Controller
         $page->show_back_to_top_btn = $request->show_back_to_top_btn ? true : false;
 
 
-
-        $page->owner_id = Auth::user()->id;
         $page->save();
         if (isset($request->logo)) {
             $page->updateLogo($request->logo);
@@ -204,15 +206,17 @@ class PageController extends Controller
                 $banner->save();
             }
         }
-
+        $user = Auth::user();
         $page->categories()->attach($request->categories);
+        $user->pages()->attach($page->id, array('role_id' => Role::OWNER));
+       
 
         return redirect()->route('pages.index')->with('success', 'Page Created Successfully');
     }
 
     public function destroy(Page $page)
     {
-        $page->categories()->detach();
+        //$page->categories()->detach();
         $page->delete();
         return back()->with('success', 'Page deleted');
     }

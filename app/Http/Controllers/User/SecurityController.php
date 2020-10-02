@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Security;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Page;
+use App\Models\Role;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,12 +14,6 @@ use Jenssegers\Agent\Agent;
 
 class SecurityController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('twofactorAuthentication');
-        //$this->middleware('locale');
-    }
     public function index()
     {
         return view('security.index', [
@@ -155,6 +151,15 @@ class SecurityController extends Controller
         if (!$this->passwordCorrect($request->password, $user->password)) {
             return back()->with('error', __('Wrong password'));
         }
+    
+        $user_pages = Page::whereHas('users', function ($query) use ($user) {
+                $query->where('user_id', $user->id)->where('role_id', Role::OWNER);
+            })->get();
+
+        foreach($user_pages as $page){
+            $page->delete();
+        }
+        
         if ($user->delete()) {
             return redirect()->route('home')->with('success', __('Your account has been deleted!'));
         }

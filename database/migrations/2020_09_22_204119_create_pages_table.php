@@ -73,8 +73,7 @@ class CreatePagesTable extends Migration
 
 
             $table->boolean('enabled')->default(1);
-            $table->bigInteger('owner_id')->unsigned();
-            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+         
             $table->softDeletes();
             $table->timestamps();
         });

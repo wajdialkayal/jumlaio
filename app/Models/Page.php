@@ -63,17 +63,44 @@ class Page extends Model
     {
         return $this->hasMany('App\Models\Banner');
     }
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post');
+    }
 
     public function categories()
     {
         return $this->belongsToMany('App\Models\Category');
     }
-
-    public function user()
+    public function users()
     {
-        return $this->belongsTo('App\Models\user');
+        return $this->belongsToMany('App\Models\User')->withPivot('role_id')->withTimestamps();
     }
 
+    public function likes()
+    {
+        return $this->hasManyThrough('App\Models\Like', 'App\Models\Post');
+    }
+
+    public function comments()
+    {
+        return $this->hasManyThrough('App\Models\Comment', 'App\Models\Post');
+    }
+
+    public function shares()
+    {
+        return $this->hasManyThrough('App\Models\Share', 'App\Models\Post');
+    }
+
+    public function followers()
+    {
+        return $this->hasMany('App\Models\Follower');
+    }
+
+    public function page_views()
+    {
+        return $this->hasMany('App\Models\PageView');
+    }
     // protected static function boot() {
     //     parent::boot();
     

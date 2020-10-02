@@ -1,25 +1,31 @@
 <div class="mt-4">
     @foreach ($pages as $page)
 
-        <div class="card shadow-sm mt-2">
+        <div class="card shadow-sm mt-2 w-100">
             <div class="card-body">
-                <p class="float-right"> Created: {{ $page->created_at->format('d/m/Y') }} </p>
-                <h4 class="card-title"> <img src="{{ $page->logo_url }}" class="rounded-circle border shadow-sm object-fit-cover" width="80"
-                        height="80" alt=""> {{ $page->name }}</h4>
-                <p class="card-text">
-                    <a href="{{ url('page/'.$page->subdomain) }}" class="btn btn-link" target="_blank"><i class="fas fa-external-link-alt"></i> {{ url($page->subdomain) }}</a> 
-                    <a href="#" class="btn btn-link float-right"><i class="fas fa-cog"></i> Settings</a>
-                </p>
                 
+                    <div class="row">
+                        <div class="col-md-5">
+                            <a href="{{ route('pages.show', $page->id) }}"><img src="{{ $page->logo_url }}" class="rounded-circle border shadow-sm object-fit-cover" width="40" height="40" alt="{{ $page->name }}"> <span class="text-dark">{{ $page->name }}</span> </a>
+                        </div>
+                        <div class="col-md-2">
+                            <small class="text-muted">{{ $page->followers_count }} follows</small>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{{ url('page/'.$page->subdomain) }}" class="btn btn-outline-primary btn-sm px-4" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Page Link
+                            </a>
+                        </div>
+                        <div class="col-md-1"><a href="{{ route('pages.show', $page->id) }}" class="btn btn-link float-right"><i class="fas fa-cog"></i></a></div>
+                    </div>
             </div>
         </div>
-
     @endforeach
 </div>
 
 @if ($pages->isEmpty())
     <div class="text-center">
-        {{ __('No pages found') }}
+        <h5>{{ __('Create Your first Page') }}</h5>
     </div>
 @endif
 

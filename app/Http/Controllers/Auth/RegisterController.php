@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Notifications\WelcomeNotification;
-use App\Rules\PhoneNumberRule;
 use App\Services\UsernameGeneratorService;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;

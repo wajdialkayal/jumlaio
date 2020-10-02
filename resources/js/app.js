@@ -7,7 +7,8 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -18,8 +19,12 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
-//Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+
+Vue.component('pageposts-component', require('./components/PagePostsComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -32,7 +37,7 @@ const app = new Vue({
 });
 /* ================================================================================================================================================================== */
 /* ==================[all]================== */
-
+$("#wrapper").addClass(localStorage.getItem("sidbarClass"))
 
  // top bar loader
  topbar.config({
@@ -49,6 +54,7 @@ const app = new Vue({
     shadowColor  : 'rgba(0,   0,   0,   .6)'
 });
 topbar.show();
+
 $(document).ready(function() {
     topbar.hide();
     $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
@@ -63,7 +69,13 @@ $(window).on("scroll", function() {
         scrollTop: 0
     }, 0);
 });
+
+
+
 $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
-  });
+    let val =  $("#wrapper").hasClass('toggled') ? 'toggled' : ' ';
+    // Set the localStorage
+    localStorage.setItem('sidbarClass', val);
+});

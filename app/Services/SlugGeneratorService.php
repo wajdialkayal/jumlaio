@@ -2,6 +2,7 @@
 namespace App\Services;
 
 use App\Models\Page;
+use App\Models\Post;
 use Illuminate\Support\Str;
 
 
@@ -35,7 +36,7 @@ class SlugGeneratorService
             ->where('id', '<>', $id)
             ->get();
     }
-
+    
     // public function setSubdomain($subdomain, $id = 0)
     // {
     //     // Normalize the slug
@@ -63,4 +64,33 @@ class SlugGeneratorService
     //         ->where('id', '<>', $id)
     //         ->get();
     // }
+
+
+    public function setPostSlug($slug, $id = 0)
+    {
+        // Normalize the slug
+        $slug =  Str::slug($slug);
+        // Get any that could possibly be related.
+        // This cuts the queries down by doing it once.
+        $allslugs = $this->getRelatedPostSlugs($slug, $id);
+        // If we haven't used it before then we are all good.
+        if (!$allslugs->contains('slug', $slug)) {
+            return $slug;
+        }
+        // Just append numbers like a savage until we find not used.
+        for ($i = 1; $i <= 10; $i++) {
+            $newSlug = $slug . '' . $i;
+            if (!$allslugs->contains('slug', $newSlug)) {
+                return $newSlug;
+            }
+        }
+        throw new \Exception('Can not create a unique slug');
+    }
+
+    protected function getRelatedPostSlugs($slug, $id = 0)
+    {
+        return Post::select('slug')->where('slug', 'like', $slug . '%')
+            ->where('id', '<>', $id)
+            ->get();
+    }
 }

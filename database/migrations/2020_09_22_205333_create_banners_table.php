@@ -16,8 +16,7 @@ class CreateBannersTable extends Migration
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
             $table->string('banner_path');
-            $table->bigInteger('page_id')->unsigned();
-            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
+            $table->foreignId('page_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

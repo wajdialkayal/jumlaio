@@ -17,8 +17,14 @@ try {
     window.make_toast = require('./toast');
     window.topbar = require('./topbar');
     require('select2/dist/js/select2.min');
+    window.Chart = require('chart.js/dist/Chart.min.js');
     window.Swal = require('sweetalert2/dist/sweetalert2.min');
+    require('./../summernote/summernote-bs4.min');
+    require('moment/dist/moment');
+    window.moment =  require('moment-timezone/builds/moment-timezone.min');
+    require('moment-timezone/builds/moment-timezone-with-data.min');
 
+    
 } catch (e) {}
 
 /**

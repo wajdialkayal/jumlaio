@@ -15,8 +15,8 @@ class CreateCategoryPageTable extends Migration
     {
         Schema::create('category_page', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained();
-            $table->foreignId('page_id')->constrained();
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');;
+            $table->foreignId('page_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

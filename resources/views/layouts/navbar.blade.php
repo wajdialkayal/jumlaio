@@ -17,9 +17,10 @@
             <ul class="navbar-nav mr-auto"> 
                 <li class="nav-item">
       
-                    <div class="input-search"> 
-                        <input type="text" placeholder="Search" name="uname" class="form-control form-control-sm finput" >  
-                    </div> 
+                    <div class="inner-addon left-addon">
+                        <i class="fas fa-search search-icon-sm mb-4"></i>
+                        <input type="text" class="form-control form-control-sm search-input" placeholder="Search...">
+                    </div>
                 </li>
                 
             </ul>

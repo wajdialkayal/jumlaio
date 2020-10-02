@@ -73,8 +73,45 @@ class User extends Authenticatable implements MustVerifyEmail
         'two_factor_expires_at',
     ];
 
+    public function role()
+    {
+        return $this->belongsTo('App\Models\Role');
+    }
     public function pages()
     {
-        return $this->hasMany('App\Models\Page');
+        return $this->belongsToMany('App\Models\Page')->withPivot('role_id')->withTimestamps();
+    }
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post');
+    }
+    
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+    public function likes()
+    {
+        return $this->hasMany('App\Models\Like');
+    }
+
+    public function shares()
+    {
+        return $this->hasMany('App\Models\Share');
+    }
+   
+    public function followings()
+    {
+        return $this->belongsToMany('App\Models\Follower');
+    }
+
+
+    public function getRoleNameAttribute(){
+        return Role::where('id',  $this->pivot->role_id)->first()->name;
+    }
+
+
+    public function getIsOwnerAttribute(){
+        return $this->pivot->role_id == Role::OWNER;
     }
 }

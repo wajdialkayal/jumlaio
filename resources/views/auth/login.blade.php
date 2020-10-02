@@ -83,6 +83,11 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div>
+                <img src="{{ asset('images/Illustrations/login.svg') }}" style="width: 100%;height: auto;" alt="create-page">
+            </div>
+        </div>
     </div>
 </div>
 @endsection

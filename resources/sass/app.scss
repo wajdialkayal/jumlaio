@@ -12,7 +12,13 @@
 @import '~sweetalert2/dist/sweetalert2.min.css';
 @import '~@fortawesome/fontawesome-free/css/all.css';
 @import './sidebar.scss';
-.main-body { padding-top: 60px; background-color: #F0F2F5; }
+@import '~chart.js/dist/Chart.min.css';
+@import './../summernote/summernote-bs4.min.css';
+
+.main-body {
+    padding-top: 60px;
+    background-color: #F0F2F5;
+}
 
 html {
     scroll-behavior: smooth;
@@ -22,18 +28,24 @@ html {
 .form-control,
 .dropdown-menu,
 .alert,
-.modal-content, .swal2-styled, .swal2-confirm, .swal2-styled, .swal2-cancel {
+.modal-content,
+.swal2-styled,
+.swal2-confirm,
+.swal2-styled,
+.swal2-cancel {
     border-radius: 10px;
 }
 
-.btn, .form-control{
-    border-radius: 25px;
-    
+.btn,
+.form-control {
+    border-radius: 10px;
+
 }
+
 .input-search {
     position: relative;
 }
- 
+
 .input-search:before {
     content: "\f002";
     font-family: "Font Awesome 5 Free";
@@ -43,30 +55,37 @@ html {
     position: absolute;
     top: 2px;
     left: 0;
-    
+
 }
-.swal2-modal { border-radius: 25px;}
+
+.swal2-modal {
+    border-radius: 25px;
+}
 
 .profile-photo-input {
     display: none;
 }
-.menu-toggle{
+
+.menu-toggle {
     cursor: pointer;
 }
+
 .swal2-styled.swal2-confirm {
-    border-radius: 25px;
+    border-radius: 10px;
     background-color: $blue;
     font-size: 0.9em;
-    box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;
-  }
-  .swal2-styled.swal2-cancel {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+}
+
+.swal2-styled.swal2-cancel {
     border: 1px solid #dee2e6;
-    border-radius: 25px;
+    border-radius: 10px;
     background-color: #F8F9Fa;
     color: #212529;
     font-size: 0.9em;
-    box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;
-  }
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+}
+
 .profile-photo {
     width: 80px;
     height: 80px;
@@ -82,6 +101,7 @@ html {
     height: 80px;
     object-fit: cover;
 }
+
 .favicon-photo-input {
     display: none;
 }
@@ -91,6 +111,7 @@ html {
     height: 40px;
     object-fit: cover;
 }
+
 .navbar-profile-photo {
     width: 28px;
     height: 28px;
@@ -142,7 +163,8 @@ html {
     cursor: pointer;
     background-color: $red;
 }
-.btn-circle{
+
+.btn-circle {
     width: 40px;
     height: 40px;
     border-radius: 20px !important;
@@ -153,9 +175,11 @@ html {
     text-decoration: none;
     transition: .3s
 }
-.vertical-align-middle{
+
+.vertical-align-middle {
     vertical-align: middle;
 }
+
 .j-link:hover {
     color: $red !important;
     text-decoration: none
@@ -226,24 +250,42 @@ btn-check:focus+.btn-twitter,
     box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
 }
 
-.object-fit-cover{object-fit: cover}
-.text-orange{color: #FF6300 !important;}
-.text-maroon-flush{color: #C32361 !important;}
-.panel-title{
+.object-fit-cover {
+    object-fit: cover
+}
+
+.text-orange {
+    color: #FF6300 !important;
+}
+
+.text-maroon-flush {
+    color: #C32361 !important;
+}
+
+.panel-title {
     cursor: pointer;
 }
-.panel-title:hover{
+
+.panel-title:hover {
     background-color: #ECECEC;
     border-radius: 10px;
 }
-.prevent-selection{
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently */
+
+.prevent-selection {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently */
 }
+
 .panel-title::after {
     content: '\f107';
     font-family: "Font Awesome 5 Free";
@@ -253,13 +295,13 @@ btn-check:focus+.btn-twitter,
 }
 
 .panel-title[aria-expanded="true"]::after {
-	content: '\f106';
+    content: '\f106';
 }
 
 
-.create-page-tab{
-        overflow-y: scroll;
-        height:calc(100vh - 364px);
+.create-page-tab {
+    overflow-y: scroll;
+    height: calc(100vh - 364px);
 }
 
 .create-page-tab::-webkit-scrollbar {
@@ -268,21 +310,145 @@ btn-check:focus+.btn-twitter,
 
 /* Track */
 .create-page-tab::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 2px grey; 
+    box-shadow: inset 0 0 2px grey;
     border-radius: 25px;
 }
 
 /* Handle */
 .create-page-tab::-webkit-scrollbar-thumb {
-    background: $light; 
+    background: $light;
     border-radius: 10px;
 }
 
 /* Handle on hover */
 .create-page-tab::-webkit-scrollbar-thumb:hover {
-    background: #009eb3; 
+    background: #009eb3;
 }
 
 .create-page-tab::-webkit-scrollbar-thumb:hover {
-    background: #009eb3; 
+    background: #009eb3;
+}
+
+
+.settings-col {
+    overflow-y: scroll;
+    height: calc(100vh - 120px);
+    overflow-x: hidden;
+}
+
+.settings-col::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.settings-col::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey;
+    border-radius: 25px;
+}
+
+/* Handle */
+.settings-col::-webkit-scrollbar-thumb {
+    background: $light;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.settings-col::-webkit-scrollbar-thumb:hover {
+    background: #009eb3;
+}
+
+.settings-col::-webkit-scrollbar-thumb:hover {
+    background: #009eb3;
+}
+
+.active-tab {
+    color: $blue;
+}
+
+.settings-list-group-item:hover {
+    color: $blue;
+    background-color: $light !important;
+    border-radius: 25px;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .search-icon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+/* align icon */
+.left-addon .search-icon {
+    left: 0px;
+}
+
+.right-addon .search-icon {
+    right: 0px;
+}
+
+.search-icon {
+    color: #9d9d9d;
+    margin-top: 2px;
+}
+.search-icon-sm {
+    color: #9d9d9d;
+}
+/* add padding  */
+.left-addon input {
+    padding-left: 30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+.search-input{
+    background-color: #F0F2F5;
+    border-radius: 25px;
+}
+
+/* style icon */
+.inner-addon .search-icon-sm {
+    position: absolute;
+    padding: 8px;
+    pointer-events: none;
+}
+
+/* align icon */
+.left-addon .search-icon-sm {
+    left: 0px;
+}
+
+.right-addon .search-icon-sm {
+    right: 0px;
+}
+
+.note-editable { background-color: #FFFFFF !important;}
+
+.img-28{
+    width: 28px;
+    height: 28px;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.m-300{
+    margin-top: 300px;
+}
+.h-190px{
+    height: 190px !important;
 }

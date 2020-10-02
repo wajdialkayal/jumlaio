@@ -23,6 +23,11 @@
             <label for="body_bg_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Page Background Color') }}</label>
             <input type="color" name="body_bg_color" id="body_bg_color" class="form-control shadow-sm w-100" value="{{old('body_bg_color') ? old('body_bg_color') : '#FFFFFF'}}">
         </div>
+
+        <div class="form-group">
+            <label for="body_text_color" class="font-weight-bold"> <i class="fas fa-fill-drip"></i> {{ __('Page Text Color') }}</label>
+            <input type="color" name="body_text_color" id="body_text_color" class="form-control shadow-sm w-100" value="{{old('body_text_color') ? old('body_text_color') : '#111111'}}">
+        </div>
     </div>
 
     <hr>
@@ -229,6 +234,10 @@
     /* ==========================['Body']========================== */
     $('#body_bg_color').on("input",function() {
         $('#body-preview').css("background-color", $(this).val());
+    });
+
+    $('#body_text_color').on("input",function() {
+        $('#body-text-preview').css("color", $(this).val());
     });
 
     $('#page_font').change(function() {
